@@ -1,0 +1,114 @@
+﻿<Window x:Class="EBS3000Dashboard.Vis.Views.SettingsWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EBS3000Dashboard.Vis"
+        
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Height="450"
+        Width="800"
+        Name="SettingsWindow"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        Title="SettingsWindow" >
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="60" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Grid Background="{StaticResource Brush|GradientBlack}">
+
+      <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="auto" />
+        <ColumnDefinition Width="auto" />
+        <ColumnDefinition />
+        <ColumnDefinition Width="auto"  />
+        <ColumnDefinition Width="240" />
+        <ColumnDefinition Width="auto" />
+      </Grid.ColumnDefinitions>
+      <!--ICON-->
+      <Rectangle Fill="{StaticResource DrawingBrush|Icon}"
+                 Margin="35,11"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Center"
+                 Height="38"
+                 Width="65"/>
+    </Grid>
+    <!--Settings area-->
+    <Grid Grid.Row="1">
+      <Border Height="1"
+                    Background="{DynamicResource DefaultForeground|Normal}"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Bottom">
+        <Border.Effect>
+          <DropShadowEffect BlurRadius="4"
+                                      Color="#FF000000"
+                                      Opacity="0.3"
+                                      Direction="270" />
+        </Border.Effect>
+      </Border>
+      <Border Name="SettingsBorder"
+                    VerticalAlignment="Stretch"
+                    HorizontalAlignment="Stretch"
+                    Background="#FFF2F2F2"
+                    Padding="40,20">
+        <Grid>
+
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="358" />
+            <ColumnDefinition Width="*" />
+          </Grid.ColumnDefinitions>
+
+          <Grid.RowDefinitions>
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="25" />
+            <RowDefinition Height="*" />
+          </Grid.RowDefinitions>
+
+          <TextBlock Grid.Column="0" Grid.Row="0" Text="Machinename"/>
+          <TextBox Grid.Column="1" Grid.Row="0" Text="{Binding MachineName}"/>
+
+          <TextBlock Grid.Column="0" Grid.Row="1" Text="{DynamicResource OpMode}"/>
+          <CheckBox Grid.Column="1" Grid.Row="1" HorizontalAlignment="Right" IsChecked="{Binding OpModeChartVisible}"/>
+
+          <TextBlock Grid.Column="0" Grid.Row="2" Text="{DynamicResource IoNioParts}"/>
+          <CheckBox Grid.Column="1" Grid.Row="2" HorizontalAlignment="Right" IsChecked="{Binding OkNokChartVisible}"/>
+
+          <TextBlock Grid.Column="0" Grid.Row="3" Text="{DynamicResource Temperature}"/>
+          <CheckBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Right" IsChecked="{Binding TemperatureChartVisible}"/>
+
+          <TextBlock Grid.Column="0" Grid.Row="4" Text="{DynamicResource Output}"/>
+          <CheckBox Grid.Column="1" Grid.Row="4" HorizontalAlignment="Right" IsChecked="{Binding OutputChartVisible}"/>
+
+          <TextBlock Grid.Column="0" Grid.Row="5" Text="{DynamicResource CommonErrors}"/>
+          <CheckBox Grid.Column="1" Grid.Row="5" HorizontalAlignment="Right" IsChecked="{Binding CommonErrorsChartVisible}"/>
+
+          <TextBlock Grid.Column="0" Grid.Row="6" Text="{DynamicResource PcbCameraSelfCheck}"/>
+          <CheckBox Grid.Column="1" Grid.Row="6" HorizontalAlignment="Right" IsChecked="{Binding PcbCameraSelfCheckChartVisible}"/>
+
+          <TextBlock Grid.Column="0" Grid.Row="8" Text="Testmode"/>
+          <CheckBox Grid.Column="1" Grid.Row="8" HorizontalAlignment="Right" IsChecked="{Binding TestModeActive}"/>
+
+          <Grid Grid.Column="1" Grid.Row="9" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="*" />
+              <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" HorizontalAlignment="Right" Width="100" Command="{Binding CancelClicked}" local:CloseOnClickBehaviour.IsEnabled="True" IsCancel="True">Cancel</Button>
+            <Button Grid.Column="1" HorizontalAlignment="Right" Width="100" Command="{Binding OkClicked}" local:CloseOnClickBehaviour.IsEnabled="True">OK</Button>
+          </Grid>
+
+          </Grid>
+      </Border>
+    </Grid>
+  </Grid>
+</Window>

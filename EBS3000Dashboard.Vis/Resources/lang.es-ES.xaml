@@ -1,0 +1,126 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:v="clr-namespace:System;assembly=mscorlib">
+  <!-- MainWindow.xaml -->
+  <v:String x:Key="LiveStatus">Modo en Vivo</v:String>
+  <v:String x:Key="ErrorMessages">Error History</v:String>
+  <v:String x:Key="MenuLanguage">Idiomas</v:String>
+  <v:String x:Key="English">Inglés</v:String>
+  <v:String x:Key="German">Alemán</v:String>
+  <v:String x:Key="French">Francés</v:String>
+  <v:String x:Key="Spanish">Español</v:String>
+  <v:String x:Key="Pointcloud">Nube de puntos</v:String>
+  <v:String x:Key="Histogram">Histograma</v:String>
+  <v:String x:Key="Datagrid">Cuadrícula de datos</v:String>
+  <v:String x:Key="Controlcharts">Gráficos de control</v:String>
+  <!--StatusbarView.xaml-->
+  <v:String x:Key="Status_OK">OK/NOK</v:String>
+  <!--ToolbarView.xaml-->
+  <v:String x:Key="NOKRate">Tarifa NOK</v:String>
+  <v:String x:Key="NOK">NOK</v:String>
+  <v:String x:Key="Total">TOTAL</v:String>
+  <v:String x:Key="CurrentPartId">ID DE LA PARTE ACTUAL</v:String>
+  <v:String x:Key="Of">de</v:String>
+  <!--LiveStatusView.xaml-->
+  <v:String x:Key="Last">Last</v:String>
+  <v:String x:Key="Hours">Hours</v:String>
+  <!--AnalysisView.xaml-->
+  <v:String x:Key="XYDeviation">X-Y DESVIACION</v:String>
+  <v:String x:Key="ZDeviation">Z DESVIACION</v:String>
+  <v:String x:Key="ZDeviationValues">Z DESVIACION</v:String>
+  <v:String x:Key="Current_Product">Producto actual</v:String>
+  <v:String x:Key="Product_Parameter">Parámetros del producto</v:String>
+  <!--AnalysisToolbarView.xaml-->
+  <v:String x:Key="MessageTypeTag">Messagetype</v:String>
+  <v:String x:Key="TimeSpan">Duración</v:String>
+  <v:String x:Key="SelectPinsString">Seleccione las clavijas que tuvieron uno o más de estos resultados de estado dentro del período de tiempo establecido:</v:String>
+  <v:String x:Key="SelectPinsManualString">Seleccione los pines manualmente a continuación:</v:String>
+  <v:String x:Key="SelectPinsManualHelp">Haga clic en una pin, módulo o conector, o dibuje marcos alrededor de los pins para seleccionarlos o deseleccionarlos. Presione Ctrl izq. para agregar pins a una selección, y Alt izq. para quitar pins de una selección.</v:String>
+  <v:String x:Key="SelectAll">Seleccionar todo</v:String>
+  <v:String x:Key="StatusText1">Resultados de la última</v:String>
+  <v:String x:Key="StatusText2">portador</v:String>
+  <v:String x:Key="Date">Fecha</v:String>
+  <v:String x:Key="Clock">Hora</v:String>
+  <v:String x:Key="From">Desde</v:String>
+  <v:String x:Key="To">hasta</v:String>
+  <v:String x:Key="The">Las</v:String>
+  <v:String x:Key="Measurements">medidas últimas</v:String>
+  <v:String x:Key="PartId">Part ID</v:String>
+  <v:String x:Key="ResetAll">Reset</v:String>
+  <v:String x:Key="Out_of_Tolerance">Fuera de tolerancia</v:String>
+  <v:String x:Key="Within_Action_Limit">Dentro del límite de actuación</v:String>
+  <v:String x:Key="Not_positioned_recognized">Posición no reconocida</v:String>
+  <v:String x:Key="At_wrong_position">En posición incorrecta</v:String>
+  <v:String x:Key="OK_Absent">OK Ausente</v:String>
+  <v:String x:Key="OK">OK</v:String>
+  <v:String x:Key="ChartControl1">Pins disponibles para filtrar</v:String>
+  <v:String x:Key="ChartControl2">Haga clic para mostrar/ocultar</v:String>
+  <!--AnalysisDataGrid.xaml-->
+  <v:String x:Key="Identifier">Stecker ID</v:String>
+  <v:String x:Key="PinType">Pin Type</v:String>
+  <v:String x:Key="PinNumber">Pin ID</v:String>
+  <v:String x:Key="NominalPoseX">Posición nominal X</v:String>
+  <v:String x:Key="NominalPoseY">Posición nominal Y</v:String>
+  <v:String x:Key="NominalPoseZ">Posición nominal Z</v:String>
+  <v:String x:Key="ResultX">Resultado  X</v:String>
+  <v:String x:Key="ResultY">Resultado  Y</v:String>
+  <v:String x:Key="ResultZ">Resultado  Z</v:String>
+  <v:String x:Key="DeviationX">Desviación Z X</v:String>
+  <v:String x:Key="DeviationY">Desviación Z Y</v:String>
+  <v:String x:Key="DeviationZ">Desviación Z</v:String>
+  <v:String x:Key="ResetDataGrid">Reset Datagrid</v:String>
+  <!--Legend-->
+  <v:String x:Key="Legend">Legend</v:String>
+  <v:String x:Key="HeaderCol1">Symbols</v:String>
+  <v:String x:Key="HeaderCol2">Pin Status</v:String>
+  <v:String x:Key="HeaderCol3">Target Status</v:String>
+  <v:String x:Key="Present">Present</v:String>
+  <v:String x:Key="Absent">Absent</v:String>
+  <v:String x:Key="Ignore">Ignore</v:String>
+  <!--Tooltip Comment for shwoing Z Deviationvalues-->
+  <v:String x:Key="TooltipCommentZValue">Click in the showed pins region or the connector name region and use LEFT/RIGHT arrows to scroll over the results</v:String>
+  <!--<Image x:Key=" " />
+    <ResourceDictionary x:Key=""/>
+    <FlowDirection x:Key=""/>
+    <ContentPresenter x:Key=""/>-->
+
+  <!--ErrorHistoryView.xaml-->
+  <v:String x:Key="OpMode">Operationmode</v:String>
+  <v:String x:Key="IoNioParts">OK/NOK</v:String>
+  <v:String x:Key="Output">Output (Parts/Hour)</v:String>
+  <v:String x:Key="Temperature">Temperature</v:String>
+  <v:String x:Key="CommonErrors">Common Errors</v:String>
+  <v:String x:Key="PcbCameraSelfCheck">Pcb-Camera Self-Check</v:String>
+
+  <!--Context Menu-->
+  <v:String x:Key="LastXHours">Last X Hours</v:String>
+  <v:String x:Key="Timespan">Timespan</v:String>
+  <v:String x:Key="UpdateInterval">Updateinterval</v:String>
+  <v:String x:Key="Interval">Interval</v:String>
+  <v:String x:Key="Seconds">Sec.</v:String>
+  <v:String x:Key="SetToDefault">Reset To Default Values</v:String>
+
+  <v:String x:Key="Average">Average</v:String>
+  <v:String x:Key="StdDeviation">Std. Deviation</v:String>
+
+  <!-- GeneralMachineData.xaml-->
+  <v:String x:Key="Machinename">Machinename</v:String>
+  <v:String x:Key="CycleTimeLastPart">Cycletime Last Part</v:String>
+  <v:String x:Key="CycleTimeLast10Parts">Cycletime Last 10 Parts</v:String>
+  <v:String x:Key="TotalCountPartsToday">Total Count Parts Today</v:String>
+  <v:String x:Key="CountGoodPartsToday">Count Good Parts Today</v:String>
+  <v:String x:Key="CountBadPartsToday">Count Bad Parts Today</v:String>
+
+  <!--ErrorListView.xaml-->
+  <v:String x:Key="MessageNumber">No.</v:String>
+  <v:String x:Key="Time">Time</v:String>
+  <v:String x:Key="State">State</v:String>
+  <v:String x:Key="MessageType">Type</v:String>
+  <v:String x:Key="MessageText">Messagetext</v:String>
+  <v:String x:Key="Appeared">Appeared</v:String>
+  <v:String x:Key="Disappeared">Disappeared</v:String>
+
+  <!--Backend-->
+  <v:String x:Key="ErrorNo">Error No.</v:String>
+
+</ResourceDictionary>

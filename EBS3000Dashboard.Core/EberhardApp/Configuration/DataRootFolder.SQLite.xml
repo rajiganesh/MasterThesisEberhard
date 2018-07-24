@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <DataRootFolder>>%ProgramData%\Eberhard AG\PCBInserter</DataRootFolder>
+  <DatabaseProvider>SqLite</DatabaseProvider>
+  <DoUserLog>false</DoUserLog>
+  <DoUserChangeLog>false</DoUserChangeLog>
+</Root>

@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+  <DataRootFolder>>%ProgramData%\Eberhard AG\PCBInserter</DataRootFolder>
+  <DatabaseProvider>MySql</DatabaseProvider>
+  <TraceDataBase>TraceData</TraceDataBase>
+  <UserDataBase>UserData</UserDataBase>
+  <DoUserLog>false</DoUserLog>
+  <DoUserChangeLog>false</DoUserChangeLog>
+</Root>

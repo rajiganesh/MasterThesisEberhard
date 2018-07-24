@@ -1,0 +1,69 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:pages="clr-namespace:EBS3000Dashboard.Vis.ViewModels.Pages"
+                    xmlns:viewpages="clr-namespace:EBS3000Dashboard.Vis.Views.Pages"
+                    xmlns:segments="clr-namespace:EBS3000Dashboard.Vis.ViewModels.Segments"
+                    xmlns:viewsegments="clr-namespace:EBS3000Dashboard.Vis.Views.Segments"
+                    xmlns:viewModels="clr-namespace:EBS3000Dashboard.Vis.ViewModels"
+                    xmlns:vis="clr-namespace:EBS3000Dashboard.Vis"
+                    xmlns:detailViews="clr-namespace:EBS3000Dashboard.Vis.Views.Segments.DetailViews"
+                    xmlns:detailViewModels="clr-namespace:EBS3000Dashboard.Vis.ViewModels.Segments.DetailView">
+  <!--Pages-->
+  <DataTemplate DataType="{x:Type pages:LiveStatusViewModel}">
+    <viewpages:LiveStatusView />
+  </DataTemplate>
+  <DataTemplate DataType="{x:Type pages:ErrorHistoryViewModel}">
+    <viewpages:ErrorHistoryView />
+  </DataTemplate>
+
+  <!--Segments-->
+  <DataTemplate DataType="{x:Type segments:ErrorListViewModel}">
+    <viewsegments:ErrorListView />
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type segments:OpModeChartViewModel}">
+    <viewsegments:OpModeChartView />
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type segments:OkNokPartsChartViewModel}">
+    <viewsegments:OkNokPartsChartView />
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type segments:OutputChartViewModel}">
+    <viewsegments:OutputChartView />
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type segments:CommonErrorsChartViewModel}">
+    <viewsegments:CommonErrorsChartView />
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type segments:TemperatureChartViewModel}">
+    <viewsegments:TemperatureChartView />
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type segments:GeneralMachineDataViewModel}">
+    <viewsegments:GeneralMachineDataView />
+  </DataTemplate>
+
+  <!--DetailView-->
+  <DataTemplate DataType="{x:Type detailViewModels:OpModeDetailViewModel}">
+    <detailViews:OpModeDetailView />
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type detailViewModels:OkNokPartsDetailViewModel}">
+    <detailViews:OkNokPartsDetailView />
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type detailViewModels:OutputDetailViewModel}">
+    <detailViews:OutputDetailView />
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type detailViewModels:CommonErrorsDetailViewModel}">
+    <detailViews:CommonErrorsDetailView />
+  </DataTemplate>
+
+  <DataTemplate DataType="{x:Type detailViewModels:TemperatureDetailViewModel}">
+    <detailViews:TemperatureDetailView />
+  </DataTemplate>
+
+</ResourceDictionary>

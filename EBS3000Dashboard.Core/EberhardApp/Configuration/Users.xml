@@ -1,0 +1,20 @@
+<Users>
+	<UserList>
+		<UserData>
+			<UserName>4F516934315A32474752593D</UserName>
+			<Password>6468637063536F556D58553D</Password>
+			<UserLevel>20131155</UserLevel>
+		</UserData>
+		<UserData>
+			<UserName>784E54575154506C37634A535347587A3467475737773D3D</UserName>
+			<Password>752F544F57474F6E6E6230694E523079436D374F71673D3D</Password>
+			<UserLevel>20131154</UserLevel>
+		</UserData>
+		<UserData>
+			<UserName>413762325673583578383141506243506E6D4C5153773D3D</UserName>
+			<Password>304A57476D664C5A4272585561766A656851775678413D3D</Password>
+			<UserLevel>20131177</UserLevel>
+		</UserData>
+	</UserList>
+	<EberhardDataAssemblyVersion>1.0.0.4031</EberhardDataAssemblyVersion>
+</Users>

@@ -1,0 +1,150 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+  <Style TargetType="{x:Type DataGrid}">
+    <Setter Property="ClipboardCopyMode" Value="ExcludeHeader"/>
+    <Setter Property="Focusable" Value="True"/> 
+    <Setter Property="SelectionMode" Value="Extended"/> 
+    <Setter Property="SelectionUnit" Value="Cell"/>
+    <Setter Property="Foreground"
+                Value="{DynamicResource DefaultForeground|Normal}" />
+        <Setter Property="ScrollViewer.CanContentScroll"
+                Value="true" />
+        <Setter Property="FontWeight"
+                Value="Light"/>
+        <Setter Property="FontSize"
+                Value="16"/>        
+        <Setter Property="ScrollViewer.PanningMode"
+                Value="Both" />
+        <Setter Property="Stylus.IsFlicksEnabled"
+                Value="False" />
+        <Setter Property="BorderThickness"
+                Value="0" />
+        <Setter Property="CanUserAddRows"
+                Value="False" />
+        <Setter Property="CanUserDeleteRows"
+                Value="False" />
+        <Setter Property="CanUserReorderColumns"
+                Value="True" />
+        <Setter Property="CanUserResizeColumns"
+                Value="False" />
+        <Setter Property="CanUserResizeRows"
+                Value="False" />
+        <Setter Property="CanUserSortColumns"
+                Value="False" />
+        <Setter Property="VerticalGridLinesBrush"
+                Value="{DynamicResource BorderBrush|Black|10PercOpacity}" />
+        <Setter Property="HorizontalGridLinesBrush"
+                Value="{DynamicResource BorderBrush|Black|10PercOpacity}" />
+        <!--<Setter Property="GridLinesVisibility"
+                Value="None" />-->
+          <Setter Property="IsReadOnly"
+                Value="True" />
+       <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGrid}">
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+              <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Border BorderThickness="2,2,2,2"
+                                BorderBrush="{DynamicResource BorderBrush|Black|10PercOpacity}">
+              <DataGridColumnHeadersPresenter x:Name="PART_ColumnHeadersPresenter"
+                                                            Grid.Column="1"
+                                                            Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Column}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+            </Border>
+            <ItemsPresenter Grid.Row="1"
+                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+
+          </Grid>
+        </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+    </Style>
+
+    <!--Style and template for the DataGridCell.-->
+    <Style TargetType="{x:Type DataGridCell}">
+        <Setter Property="Height"
+                Value="Auto" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="Right" />
+        <Setter Property="BorderThickness"
+                Value="2" />
+        <Setter Property="Foreground"
+                Value="{DynamicResource DefaultForeground|Normal}"/>
+        <Setter Property="Background"
+                Value="{DynamicResource Background|GradientWhite}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Border x:Name="CellBorder"
+                            Height="{TemplateBinding Height}"
+                            BorderBrush="{DynamicResource BorderBrush|Black|10PercOpacity}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{DynamicResource Background|GradientWhite2}"
+                            SnapsToDevicePixels="True">
+                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                          HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" />
+                    </Border>
+                    <ControlTemplate.Triggers>
+                      <Trigger Property="IsSelected"
+                               Value="True">
+                        <Setter Property="Foreground"
+                                Value="Red" />
+                        <Setter Property="Background"
+                                Value="CornflowerBlue"/>
+                      </Trigger>
+          </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--Style and template for the DataGridRowHeader.-->
+  <Style  TargetType="{x:Type DataGridRowHeader}">
+    <Setter Property="Template">
+      <Setter.Value>
+        <ControlTemplate TargetType="{x:Type DataGridRowHeader}">
+          <Grid>
+            <Border x:Name="rowHeaderBorder"
+                                BorderBrush="{DynamicResource BorderBrush|Black|10PercOpacity}"
+                                BorderThickness="3"
+                                Background="{DynamicResource Background|GradientLightGrey}">
+              <StackPanel Orientation="Horizontal">
+                <ContentPresenter VerticalAlignment="Center"
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+              </StackPanel>
+            </Border>
+          </Grid>
+        </ControlTemplate>
+      </Setter.Value>
+    </Setter>
+  </Style>
+
+  <Style TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="VerticalContentAlignment"
+                Value="Center" />
+        <Setter Property="HorizontalContentAlignment"
+                Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridColumnHeader}">
+                    <Grid>
+                        <Border x:Name="columnHeaderBorder"
+                                BorderBrush="{DynamicResource BorderBrush|Black|10PercOpacity}"
+                                BorderThickness="2,2,2,2"
+                                Background="{DynamicResource Background|GradientLightGrey}">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

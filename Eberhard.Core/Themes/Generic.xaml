@@ -1,0 +1,38 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Themes/Brushes.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Styles/TextBlockDictionary.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Styles/ButtonDictionary.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Styles/RadioButtonDictionary.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Styles/CheckBoxDictionary.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Styles/ToggleButtonDictionary.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Styles/ScrollBarDictionary.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Styles/ScrollViewerDictionary.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Styles/ComboBoxDictionary.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Styles/TextBoxDictionary.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Styles/DataGridDictionary.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Styles/ListViewDictionary.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Styles/AnimationsDictionary.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Styles/ContextMenuDictionary.xaml" />
+
+
+        <!--Controls-->
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Controls/PointCloud.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Controls/Histogram.xaml" />
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Controls/Spinner.xaml" />
+
+        <!--Charts-->
+        <ResourceDictionary Source="pack://application:,,,/Eberhard.Core;component/Controls/ChartControl/Generic.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+
+  
+
+    
+
+   
+
+   
+
+    
+</ResourceDictionary>

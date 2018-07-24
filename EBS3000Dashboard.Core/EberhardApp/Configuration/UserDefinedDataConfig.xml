@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <UserDefinedDataConfig Part="BaseData" Text="en||Test Axis Loading Portal Base Data##de||Test Achsenladeportal Basisdaten">
+    <UserDefinedDataSection Name="Test1" Text="en||Just a fucking test##de||Nur ein blöder Test">
+      <UserDefinedDataItems AddItemText="en||Add Position##de||Position hinzufügen" RemoveItemText="en||Remove Position##de||Position löschen">
+        <UserDefinedDataItem Type="Float" Name="FloatTest1" DefaultValue="8.2" MinValue ="0" MaxValue =" 20.99" Text="en||Axis R##de||Achse R"/>
+        <UserDefinedDataItem Type="Float" Name="FloatTest2" DefaultValue="10.5" MinValue ="0" MaxValue =" 20.99"  Text="en||Axis S##de||Achse S"/>
+        <UserDefinedDataItem Type="Text" Name="TextTest1" Text="en||Description##de||Beschreibung"/>
+      </UserDefinedDataItems>
+    </UserDefinedDataSection>
+    <UserDefinedDataSection Name="Test2" Text="en||Just another fucking test##de||Noch ein blöder Test">
+      <UserDefinedDataItems AddItemText="en||Add Position##de||Position hinzufügen" RemoveItemText="en||Remove Position##de||Position löschen">
+        <UserDefinedDataItem Type="Float" Name="FloatTest1" Text="en||Float value##de||Gleitkommawert"/>
+        <UserDefinedDataItem Type="Integer" Name="IntTest1" Text="en||Int value##de||Integer"/>
+        <UserDefinedDataItem Type="Text" Name="TextTest1" Text="en||Description##de||Beschreibung"/>
+      </UserDefinedDataItems>
+    </UserDefinedDataSection>
+  </UserDefinedDataConfig>
+  <UserDefinedDataConfig Part="ProductData" Text="en||Test Axis Loading Portal Product Data##de||Test Achsenladeportal Produktdaten">
+    <UserDefinedDataSection Name="Test1" Text="en||Just a fucking test##de||Nur ein blöder Test">
+      <UserDefinedDataItems AddItemText="en||Add Position##de||Position hinzufügen" RemoveItemText="en||Remove Position##de||Position löschen">
+        <UserDefinedDataItem Type="Float" Name="FloatTest1" DefaultValue="8.2" MinValue ="0" MaxValue =" 20.99" Text="en||Axis R##de||Achse R"/>
+        <UserDefinedDataItem Type="Float" Name="FloatTest2" DefaultValue="10.5" MinValue ="0" MaxValue =" 20.99"  Text="en||Axis S##de||Achse S"/>
+        <UserDefinedDataItem Type="Text" Name="TextTest1" Text="en||Description##de||Beschreibung"/>
+      </UserDefinedDataItems>
+    </UserDefinedDataSection>
+    <UserDefinedDataSection Name="Test2" Text="en||Just another fucking test##de||Noch ein blöder Test">
+      <UserDefinedDataItems AddItemText="en||Add Position##de||Position hinzufügen" RemoveItemText="en||Remove Position##de||Position löschen">
+        <UserDefinedDataItem Type="Float" Name="FloatTest1" Text="en||Float value##de||Gleitkommawert"/>
+        <UserDefinedDataItem Type="Integer" Name="IntTest1" Text="en||Int value##de||Integer"/>
+        <UserDefinedDataItem Type="Text" Name="TextTest1" Text="en||Description##de||Beschreibung"/>
+        <UserDefinedDataItem Type="Boolean" Name="BoolTest1" Text="en||True/False##de||Ja/Nein"/>
+      </UserDefinedDataItems>
+    </UserDefinedDataSection>
+  </UserDefinedDataConfig>
+  <UserDefinedDataConfig Part="ProductDataExtCycle" Text="en||Test Axis Loading Portal External Cycle##de||Test Achsenladeportal Externer Zyklus">
+    <!-- Userdefined Data without Sections -->
+    <UserDefinedDataItems AddItemText="en||Add Position##de||Position hinzufügen" RemoveItemText="en||Remove Position##de||Position löschen">
+      <UserDefinedDataItem Type="Float" Name="FloatTest1" DefaultValue="8.2" MinValue ="0" MaxValue =" 20.99" Text="en||Axis R##de||Achse R"/>
+      <UserDefinedDataItem Type="Float" Name="FloatTest2" DefaultValue="10.5" MinValue ="0" MaxValue =" 20.99"  Text="en||Axis S##de||Achse S"/>
+      <UserDefinedDataItem Type="Text" Name="TextTest1" Text="en||Description##de||Beschreibung"/>
+    </UserDefinedDataItems>
+  </UserDefinedDataConfig>
+</root>

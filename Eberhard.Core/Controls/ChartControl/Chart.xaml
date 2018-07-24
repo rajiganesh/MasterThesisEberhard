@@ -1,0 +1,356 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:c="clr-namespace:Eberhard.Core.Utilities"
+                    xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+                    xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+                    xmlns:local="clr-namespace:Eberhard.Core.Controls.ChartControl">
+
+    <x:Array x:Key="SecondsArray"
+             Type="{x:Type system:String}">
+        <system:String>-:05</system:String>
+        <system:String>-:10</system:String>
+        <system:String>-:15</system:String>
+        <system:String>-:20</system:String>
+        <system:String>-:25</system:String>
+        <system:String>-:30</system:String>
+        <system:String>-:35</system:String>
+        <system:String>-:40</system:String>
+        <system:String>-:45</system:String>
+        <system:String>-:50</system:String>
+        <system:String>-:55</system:String>
+    </x:Array>
+
+    <AlternationConverter x:Key="AlternativeColorConverter">
+        <SolidColorBrush Color="Silver" />
+        <SolidColorBrush Color="LightGray" />
+    </AlternationConverter>
+
+    <Style TargetType="{x:Type local:Chart}">
+        <Style.Resources>
+            <ItemsPanelTemplate x:Key="ItemsPanelTemplate|Canvas">
+                <Canvas />
+            </ItemsPanelTemplate>
+            <Style x:Key="ItemContainerStyle|Canvas"
+                   TargetType="ContentPresenter">
+                <Setter Property="Canvas.Top"
+                        Value="{Binding Top}" />
+            </Style>
+            <Storyboard x:Key="Storyboard|CloseDrawer">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)"
+                                               Storyboard.TargetName="PART_DRAWER">
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5"
+                                          Value="-170" />
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+            <Storyboard x:Key="Storyboard|OpenDrawer">
+                <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)"
+                                               Storyboard.TargetName="PART_DRAWER">
+                    <EasingDoubleKeyFrame KeyTime="0"
+                                          Value="-170" />
+                    <EasingDoubleKeyFrame KeyTime="0:0:0.5"
+                                          Value="0" />
+                </DoubleAnimationUsingKeyFrames>
+            </Storyboard>
+        </Style.Resources>
+        <Setter Property="Background"
+                Value="{DynamicResource Brush|White}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:Chart}">
+                    <ControlTemplate.Triggers>
+                        <EventTrigger RoutedEvent="ToggleButton.Checked"
+                                      SourceName="toggleButton">
+                            <BeginStoryboard Storyboard="{StaticResource Storyboard|OpenDrawer}" />
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="ToggleButton.Unchecked"
+                                      SourceName="toggleButton">
+                            <BeginStoryboard Storyboard="{StaticResource Storyboard|CloseDrawer}" />
+                        </EventTrigger>
+                    </ControlTemplate.Triggers>
+                    <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                            <ScrollViewer VerticalScrollBarVisibility="Disabled">
+                                <Grid x:Name="PART_ContentGrid">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <!--BACKGROUND TIME LINE-->
+                                    <ItemsControl AlternationCount="2"
+                                                  Grid.Column="1"
+                                                  x:Name="PART_TimeLineBackGround"
+                                                  ItemsSource="{Binding TimeLineSource, RelativeSource={RelativeSource TemplatedParent}}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal" />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Width="300"
+                                                      Background="{Binding RelativeSource={RelativeSource AncestorType=ContentPresenter}, Path=(ItemsControl.AlternationIndex), Converter={StaticResource AlternativeColorConverter}}">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="*" />
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="Auto" />
+                                                        <RowDefinition Height="Auto" />
+                                                    </Grid.RowDefinitions>
+                                                    <ItemsControl Grid.Row="1"
+                                                                  Margin="2,0"
+                                                                  ItemsSource="{StaticResource SecondsArray}">
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <StackPanel Orientation="Horizontal" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                        <ItemsControl.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Width="25"
+                                                                           Margin="1,0"
+                                                                           Text="{Binding}"
+                                                                           Style="{DynamicResource TextBlock|Header4|Grey|Light}" />
+                                                            </DataTemplate>
+                                                        </ItemsControl.ItemTemplate>
+                                                    </ItemsControl>
+                                                    <Grid Grid.Row="2">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto" />
+                                                            <ColumnDefinition Width="*" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Text="{Binding Date, StringFormat=HH:mm}"
+                                                                   Style="{DynamicResource TextBlock|Header4|Grey|Light}"
+                                                                   Margin="5,0" />
+                                                        <Rectangle Grid.Column="1"
+                                                                   Fill="Gray"
+                                                                   Stretch="Fill"
+                                                                   VerticalAlignment="Center"
+                                                                   Height="1" />
+                                                    </Grid>
+                                                    <Grid Height="20" Grid.Row="3">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="Auto" />
+                                                            <ColumnDefinition Width="*" />
+                                                        </Grid.ColumnDefinitions>
+                                                        <TextBlock Text="{Binding Date, StringFormat=dd.MM.yyyy}"
+                                                                   VerticalAlignment="Center"
+                                                                   x:Name="dateText"
+                                                                   Visibility="Collapsed"
+                                                                   Style="{DynamicResource TextBlock|Header4|Grey|Light}"
+                                                                   Margin="5,0" />
+                                                        <Rectangle Grid.Column="1"
+                                                                   Fill="Gray"
+                                                                   Stretch="Fill"
+                                                                   VerticalAlignment="Center"
+                                                                   Height="1" />
+                                                    </Grid>
+                                                  
+                                                </Grid>
+                                                <DataTemplate.Triggers>
+                                                    <DataTrigger Binding="{Binding Date.Hour}"
+                                                                 Value="0">
+                                                        <Setter Property="Visibility"
+                                                                Value="Visible"
+                                                                TargetName="dateText" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding CanShowDate}"
+                                                                 Value="true">
+                                                        <Setter Property="Visibility"
+                                                                Value="Visible"
+                                                                TargetName="dateText" />
+                                                    </DataTrigger>
+                                                </DataTemplate.Triggers>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+
+                                    <!--HORIZONTAL LINES-->
+                                    <ItemsControl Grid.Column="1"
+                                                  ItemsSource="{Binding VerticalAxis.LinesSource, RelativeSource={RelativeSource TemplatedParent}}"
+                                                  ItemContainerStyle="{StaticResource ItemContainerStyle|Canvas}"
+                                                  ItemsPanel="{StaticResource ItemsPanelTemplate|Canvas}">
+
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <Path Data="M0.5,0.5 L516.5,0.5 z"
+                                                      x:Name="LineRect"
+                                                      Opacity="0.3"
+                                                      Height="1"
+                                                      Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType=ItemsControl}}"
+                                                      Stroke="{DynamicResource Brush|Grey}"
+                                                      Stretch="Fill" />
+                                                <DataTemplate.Triggers>
+                                                    <DataTrigger Binding="{Binding Type}"
+                                                                 Value="Error">
+                                                        <Setter Property="Stroke"
+                                                                TargetName="LineRect"
+                                                                Value="{DynamicResource Brush|Red}" />
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding Type}"
+                                                                 Value="Warning">
+                                                        <Setter Property="Stroke"
+                                                                TargetName="LineRect"
+                                                                Value="{DynamicResource Brush|Yellow}" />
+                                                    </DataTrigger>
+                                                </DataTemplate.Triggers>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+
+                                    <!--POINTS-->
+                                    <ItemsControl x:Name="PART_ChartSource"
+                                                  Grid.Column="1"
+                                                  ItemsPanel="{StaticResource ItemsPanelTemplate|Canvas}"
+                                                  ItemsSource="{TemplateBinding HorizontalAxisSource}">
+
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <local:ChartLineControl Points="{Binding}"
+                                                                        Tag="{Binding PinName}"
+                                                                        Foreground="{Binding LineColor}"
+                                                                        SelectedPoint="{Binding SelectedPoint, Mode=OneWayToSource, RelativeSource={RelativeSource AncestorType=local:Chart}}"/>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+
+                                    <Canvas Height="{Binding ActualHeight, ElementName=PART_ChartSource}"
+                                            Width="{Binding ActualWidth, ElementName=PART_ChartSource}"
+                                            Grid.Column="1">
+                                        <Border MinHeight="100"
+                                                MinWidth="150"
+                                                Padding="10"
+                                                DataContext="{Binding SelectedPoint, RelativeSource={RelativeSource TemplatedParent}}"
+                                                Background="{DynamicResource Brush|White}">
+                                            <Border.Effect>
+                                                <DropShadowEffect BlurRadius="20"
+                                                                  ShadowDepth="5"
+                                                                  Color="Gray"
+                                                                  Direction="180"
+                                                                  Opacity="0.5" />
+                                            </Border.Effect>
+                                            <Border.Style>
+                                                <Style TargetType="Border">
+                                                    <Setter Property="Visibility"
+                                                            Value="Visible" />
+                                                    <Setter Property="Canvas.Left"
+                                                            Value="{Binding DisplayPosition.X}" />
+                                                    <Setter Property="Canvas.Top"
+                                                            Value="{Binding DisplayPosition.Y}" />
+                                                    <Style.Triggers>
+                                                        <Trigger Property="DataContext"
+                                                                 Value="{x:Null}">
+                                                            <Setter Property="Visibility"
+                                                                    Value="Collapsed" />
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </Border.Style>
+                                            <StackPanel VerticalAlignment="Center">
+                                                <TextBlock Text="Pin"
+                                                           HorizontalAlignment="Center"
+                                                           Style="{DynamicResource TextBlock|Header4|Grey|Bold}" />
+                                                <TextBlock Text="{Binding PinName}"
+                                                           HorizontalAlignment="Center"
+                                                           Style="{DynamicResource TextBlock|Header4}"
+                                                           Foreground="{DynamicResource Brush|Grey}" />
+                                                <TextBlock Text="Part Id"
+                                                           HorizontalAlignment="Center"
+                                                           Style="{DynamicResource TextBlock|Header4|Grey|Bold}" />
+                                                <TextBlock Text="{Binding PinName}"
+                                                           HorizontalAlignment="Center"
+                                                           Foreground="{DynamicResource Brush|Grey}"
+                                                           Style="{DynamicResource TextBlock|Header4}" />
+                                                <TextBlock Text="Date"
+                                                           HorizontalAlignment="Center"
+                                                           Style="{DynamicResource TextBlock|Header4|Grey|Bold}" />
+                                                <TextBlock Text="{Binding TimeStamp}"
+                                                           Foreground="{DynamicResource Brush|Grey}"
+                                                           HorizontalAlignment="Center"
+                                                           Style="{DynamicResource TextBlock|Header4}" />
+                                            </StackPanel>
+
+                                        </Border>
+                                    </Canvas>
+
+                                </Grid>
+                            </ScrollViewer>
+                            
+                            <!--POINTS DRAWER-->                        
+                            <Border x:Name="PART_DRAWER"
+                                    Width="218"
+                                    Height="{Binding ActualHeight, ElementName=PART_TimeLineBackGround}"
+                                    VerticalAlignment="Top"
+                                    Padding="10"
+                                    Background="{DynamicResource Brush|White}"
+                                    HorizontalAlignment="Left"
+                                    RenderTransformOrigin="0.5,0.5">
+                                <Border.RenderTransform>
+                                    <TransformGroup>
+                                        <ScaleTransform />
+                                        <SkewTransform />
+                                        <RotateTransform />
+                                        <TranslateTransform />
+                                    </TransformGroup>
+                                </Border.RenderTransform>
+                                <Border.Effect>
+                                    <DropShadowEffect BlurRadius="20"
+                                                      ShadowDepth="5"
+                                                      Color="Gray"
+                                                      Direction="0"
+                                                      Opacity="0.3" />
+                                </Border.Effect>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <ToggleButton x:Name="toggleButton"
+                                                  IsChecked="{Binding IsDrawerOpen, Mode=TwoWay}"
+                                                  Content="{TemplateBinding DrawerToggleHeader}"
+                                                  c:AttachedProperties.SubContent="{TemplateBinding DrawerToggleSubHeader}"
+                                                  Style="{DynamicResource ToggleButtonStyle|DrawerButton}"
+                                                  RenderTransformOrigin="0.5,0.5" />
+                                    
+                                    <ContentControl x:Name="PART_FilterArea"
+                                                    Grid.Row="1"
+                                                    Content="{TemplateBinding FilterContent}"
+                                                    ContentTemplate="{TemplateBinding FitlerContentTemplate}" />
+                                </Grid>
+                            </Border>                            
+                            
+                            <!--VERTIVAL AXIS-->
+                            <ItemsControl Grid.Column="1"
+                                          Height="{Binding ActualHeight, ElementName=PART_TimeLineBackGround}"
+                                          VerticalAlignment="Top"
+                                          ItemsSource="{Binding VerticalAxis.LabelSource, RelativeSource={RelativeSource TemplatedParent}}"
+                                          Background="{DynamicResource Brush|White}"
+                                          ItemContainerStyle="{StaticResource ItemContainerStyle|Canvas}"
+                                          ItemsPanel="{StaticResource ItemsPanelTemplate|Canvas}">
+                                <ItemsControl.Effect>
+                                    <DropShadowEffect BlurRadius="20"
+                                                      ShadowDepth="5"
+                                                      Color="Gray"
+                                                      Direction="180"
+                                                      Opacity="0.3" />
+                                </ItemsControl.Effect>
+                                <ItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding Label, StringFormat={}{0:+0.000;-0.000;0}}"
+                                                   Style="{DynamicResource TextBlock|Header4|Grey|Light}"
+                                                   Margin="10,-10" />
+                                    </DataTemplate>
+                                </ItemsControl.ItemTemplate>
+                            </ItemsControl>
+                        </Grid>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

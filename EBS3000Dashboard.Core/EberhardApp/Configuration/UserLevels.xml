@@ -1,0 +1,75 @@
+<UserLevels>
+	<Levels>
+		<UserLevel>
+			<Level>20131155</Level>
+			<Description>
+				<LocalText xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+					<Language>en-US</Language>
+					<Text>2F356E34516A7636433839336176665948734C4832413D3D</Text>
+				</LocalText>
+				<LocalText xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+					<Language>de-DE</Language>
+					<Text>2F356E34516A7636433839336176665948734C4832413D3D</Text>
+				</LocalText>
+			</Description>
+		</UserLevel>
+		<UserLevel>
+			<Level>20131121</Level>
+			<Description>
+				<LocalText xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+					<Language>en-US</Language>
+					<Text>524D315238687478755348472F62497A51376B6353513D3D</Text>
+				</LocalText>
+				<LocalText xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+					<Language>de-DE</Language>
+					<Text>3530517155523754554158704F434F53636A375441673D3D</Text>
+				</LocalText>
+			</Description>
+		</UserLevel>
+		<UserLevel>
+			<Level>20131108</Level>
+			<Description>
+				<LocalText xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+					<Language>de-DE</Language>
+					<Text>6A652B4B5965454A5A43644572726F312F5873472F773D3D</Text>
+				</LocalText>
+				<LocalText xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+					<Language>en-US</Language>
+					<Text>696D74526D42786735637130664679774434566B56413D3D</Text>
+				</LocalText>
+			</Description>
+		</UserLevel>
+		<UserLevel>
+			<Level>20131118</Level>
+			<Description>
+				<LocalText xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+					<Language>de-DE</Language>
+					<Text>2F773071616F4B62494461625169414456716F4979413D3D</Text>
+				</LocalText>
+				<LocalText xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+					<Language>en-US</Language>
+					<Text>54467256537276494C7A6D4F784279387A6B314558513D3D</Text>
+				</LocalText>
+			</Description>
+		</UserLevel>
+		<UserLevel>
+			<Level>20131154</Level>
+			<Description>
+				<LocalText xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+					<Language>en-US</Language>
+					<Text>784E54575154506C37634A535347587A3467475737773D3D</Text>
+				</LocalText>
+			</Description>
+		</UserLevel>
+		<UserLevel>
+			<Level>20131177</Level>
+			<Description>
+				<LocalText xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+					<Language>en-US</Language>
+					<Text>413762325673583578383141506243506E6D4C5153773D3D</Text>
+				</LocalText>
+			</Description>
+		</UserLevel>
+	</Levels>
+	<EberhardDataAssemblyVersion>1.0.0.4031</EberhardDataAssemblyVersion>
+</UserLevels>
